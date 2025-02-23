@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark;
+}
+
+
+@layer base {
+
+/* Active NavLink Styling */
+nav .active {
+  background: linear-gradient(to right, #9333ea, #db2777);
+  color: white !important;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+nav a:hover {
+  background: linear-gradient(to right, #9c52e1, #e14d8f);
+  color: white !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+}
+/* Custom CSS for scrollbar */
+ 
+body {
+  overflow-y: scroll; 
+}  
+
+
+}
