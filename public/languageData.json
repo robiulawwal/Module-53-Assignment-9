@@ -66,6 +66,17 @@
         "example": "はい、わかりました。 (hai, wakarimashita.) - Yes, I understand."
     },
     {
+        "id": "word009",
+        "word": "複雑",
+        "pronunciation": "fukuzatsu",
+        "meaning": "complex / complicated",
+        "part_of_speech": "adjective",
+        "difficulty": "hard",
+        "lesson_no": 1,
+        "when_to_say": "Used to describe something that is intricate or difficult to understand.",
+        "example": "この問題はとても複雑です。 (kono mondai wa totemo fukuzatsu desu.) - This problem is very complex."
+    },
+    {
         "id": "word007",
         "word": "いいえ",
         "pronunciation": "iie",

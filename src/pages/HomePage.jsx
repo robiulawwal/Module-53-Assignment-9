@@ -11,7 +11,7 @@ const HomePage = () => {
             <SliderSection></SliderSection>
             <AboutSection></AboutSection>
             <SuccessSection></SuccessSection>
-            {/* <LingoBingoApp></LingoBingoApp> */}
+            <LingoBingoApp></LingoBingoApp>
             <PricingSection></PricingSection>
        <TestimonialsSection></TestimonialsSection>
         </div>

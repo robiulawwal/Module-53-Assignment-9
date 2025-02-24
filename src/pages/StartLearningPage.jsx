@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bgImage from "../assets/online-reading-concept-businessman-reading-book-online-vector.jpg";
 
 const StartLearningPage = () => {
@@ -15,7 +15,6 @@ const StartLearningPage = () => {
     { "lesson_no": 10, id: 10 },
   ];
   const navigate = useNavigate();
-  const data = useLoaderData();
   // console.log(data);
 
   const handleLessons = (lesson_no) => {

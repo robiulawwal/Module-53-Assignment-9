@@ -23,7 +23,7 @@ const router = createBrowserRouter([
                 element: <StartLearningPage></StartLearningPage>,
             },
             {
-                path: "/lessons/:id",
+                path: "/lessons/:lesson_no",
                 element: <Lessons></Lessons>,
                 loader: () => fetch("/languageData.json").then(res => res.json())
 
