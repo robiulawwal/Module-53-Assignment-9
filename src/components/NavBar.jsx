@@ -1,8 +1,10 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../contextData/AuthProvider";
 
 
 const NavBar = () => {
-
+const {user,logOutUser } = useContext(AuthContext);
     return (
 
         <div className="bg-base-100">
@@ -17,7 +19,7 @@ const NavBar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             <li> <NavLink to="/">Home</NavLink>  </li>
                             <li> <NavLink to="/start-learning">Start-Learning</NavLink>  </li>
-                            <li><NavLink to="register">Register</NavLink></li>
+                            <li><NavLink to="/tutorials">Tutorials</NavLink></li>
                             <li><NavLink to="signup">Signup</NavLink></li>
                         </ul>
                     </div>
@@ -29,14 +31,18 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1 space-x-3">
                         <li> <NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/">Home</NavLink>  </li>
                         <li> <NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/start-learning">Start-Learning</NavLink>  </li>
-                        <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="register">Register</NavLink></li>
+                        <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/tutorials">Tutorials</NavLink></li>
                         <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="signup">Signup</NavLink></li>
                     </ul>
                 </div>
                 <div className="navbar-end">
-                <Link to="/auth/login"><button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
-                        Login
-                    </button></Link>
+                {
+                    user?<button onClick={logOutUser} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
+                    Logout
+                </button>:<Link to="/auth/login"><button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
+                    Login
+                </button></Link>
+                }
                 </div>
             </nav>
         </div>

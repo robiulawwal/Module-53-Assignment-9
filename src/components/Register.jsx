@@ -1,31 +1,46 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../contextData/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
+    const {user,setUser,createNewUser,} = useContext(AuthContext);
+    console.log(user)
     const [errorMessage, setErrorMessage] = useState(null);
     const [showPassword, setShowPassword] = useState(true);
-
+const navigate = useNavigate()
 
     const handleSignup = (e) => {
-        let regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+        let regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+
         e.preventDefault();
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        const terms = e.target.terms.checked;
-
-        console.log(email, password, terms);
         setErrorMessage(null)
-        if (!terms) {
-            setErrorMessage("accept our terms and conditions");
+        if (!email) {
+            setErrorMessage("enter valid email");
             return;
         }
         if (!regex.test(password)) {
-            setErrorMessage("Use combination of Uppercase lowercase special character number")
+            setErrorMessage("Use Uppercase lowercase and 6 digit")
             return;
         }
+        createNewUser(email,password)
+        .then((result) => {
+            // Signed up 
+            console.log(result)
+            setUser(result.user);
+            navigate("/")
+            // ...
+          })
+          .catch((error) => {
+            console.log(error.message)
+            toast.error(error.message.replace("Firebase: ", ""))
+            // ..
+          });
 
     }
 

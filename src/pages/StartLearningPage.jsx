@@ -1,22 +1,27 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import bgImage from "../assets/online-reading-concept-businessman-reading-book-online-vector.jpg";
 
 const StartLearningPage = () => {
-    const lessonCount = [
-        { lesson_no: 1, id: 1 },
-        { lesson_no: 2, id: 2 },
-        { lesson_no: 3, id: 3 },
-        { lesson_no: 4, id: 4 },
-        { lesson_no: 5, id: 5 },
-        { lesson_no: 6, id: 6 },
-        { lesson_no: 7, id: 7 },
-        { lesson_no: 8, id: 8 },
-        { lesson_no: 9, id: 9 },
-        { lesson_no: 10, id: 10 },
-      ];
-
+  const lessonCount = [
+    { "lesson_no": 1, id: 1 },
+    { "lesson_no": 2, id: 2 },
+    { "lesson_no": 3, id: 3 },
+    { "lesson_no": 4, id: 4 },
+    { "lesson_no": 5, id: 5 },
+    { "lesson_no": 6, id: 6 },
+    { "lesson_no": 7, id: 7 },
+    { "lesson_no": 8, id: 8 },
+    { "lesson_no": 9, id: 9 },
+    { "lesson_no": 10, id: 10 },
+  ];
+  const navigate = useNavigate();
   const data = useLoaderData();
-  console.log(data);
+  // console.log(data);
+
+  const handleLessons = (lesson_no) => {
+    console.log(lesson_no)
+    navigate(`/lessons/${lesson_no}`)
+  }
 
   return (
     <div className="container mx-auto my-18 w-11/12">
@@ -28,11 +33,12 @@ const StartLearningPage = () => {
       {/* Lesson Cards */}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mt-12">
         {lessonCount.map((lesson) => (
-          <div
+
+          <div onClick={() => handleLessons(lesson.lesson_no)}
             key={lesson.id}
-            className="relative border border-purple-500 rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
+            className="relative border border-purple-500 shadow-purple-300 rounded-xl shadow-xl overflow-hidden hover:scale-105 transition-transform duration-300"
           >
-            {/* Background with Dark Overlay */}
+
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${bgImage})` }}

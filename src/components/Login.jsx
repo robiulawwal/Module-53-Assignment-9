@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../contextData/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
-    const [success, setSuccess] = useState(false);
+    const {setUser,loginUser, } = useContext(AuthContext);
     const [error, setLoginError] = useState("");
-    const emailRef = useRef();
     const handleForm = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -12,16 +13,28 @@ const Login = () => {
         console.log(email, password);
         if(!email){
             setLoginError("enter a valid email")
+            return
         }
         if(password.length<6){
             setLoginError("enter 6 digit password")
+            return
         }
+        loginUser(email,password)
+        .then((result) => {
+            // Signed in 
+            console.log(result.user)
+            // ...
+          })
+          .catch((error) => {
+            console.log(error.message)
+            toast.error(error.message.replace("Firebase: ", ""))
+          });
         // reset the setSuccess everyTime
         // setSuccess(false);
         // setLoginError("");
 
     }
-console.log(emailRef)
+
     return (
         <div className="my-18">
             <h1 className="text-3xl text-purple-600 font-bold text-center mb-6">Login now!</h1>
@@ -29,7 +42,7 @@ console.log(emailRef)
                 <form onSubmit={handleForm}>
                     <div className="card-body"> 
                         <label className="fieldset-label">Email</label>
-                        <input type="email" ref={emailRef} name="email" className="input" placeholder="Email" />
+                        <input type="email" name="email" className="input" placeholder="Email" />
                         <label className="fieldset-label">Password</label>
                         <input type="password" name="password" className="input" placeholder="Password" />
                         <div><a className="link link-hover">Forgot password?</a></div>
