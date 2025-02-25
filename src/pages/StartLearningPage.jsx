@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import bgImage from "../assets/online-reading-concept-businessman-reading-book-online-vector.jpg";
 
 const StartLearningPage = () => {
@@ -75,6 +75,68 @@ const StartLearningPage = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="mt-16">
+        <h1 className="text-xl md:text-3xl font-semibold text-pink-800 text-center mb-8">
+          Start watching tutorials now  click view <br /> more for more tutorial videos
+        </h1>
+      
+
+        {/* Responsive Grid for Videos */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+          {/* Video 1 */}
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.youtube.com/embed/sISIVKJh_EA?si=E0riVwbZwlls8VwL"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+
+          {/* Video 2 */}
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.youtube.com/embed/kR21pvgsCo0?si=qc0M13faLA8x8BPL"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+
+          {/* Video 3 */}
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.youtube.com/embed/HMI_oAnjtmY?si=yJBZzd7m0u53oztk"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+
+          {/* Video 4 */}
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe
+              src="https://www.youtube.com/embed/AfkgVPo2OSI?si=EpAwYkd7M20NkEG7"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full rounded-lg shadow-lg"
+            ></iframe>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <Link to="/tutorials"><button className="mt-10 bg-gradient-to-r from-pink-600 to-orange-600 hover:from-pink-700 hover:to-orange-700 text-white px-10 py-3 rounded-lg transition duration-300 shadow-md ">
+            View More
+          </button></Link>
+        </div>
       </div>
     </div>
   );

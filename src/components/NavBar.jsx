@@ -39,7 +39,7 @@ const {user,logOutUser } = useContext(AuthContext);
                 {
                     user?<button onClick={logOutUser} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
                     Logout
-                </button>:<Link to="/auth/login"><button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
+                </button>:<Link to="/auth/login"><button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300">
                     Login
                 </button></Link>
                 }

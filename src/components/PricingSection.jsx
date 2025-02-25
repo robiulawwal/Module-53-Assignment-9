@@ -1,8 +1,7 @@
-import React from 'react';
 
 const PricingSection = () => {
     return (
-        <div className="my-8 lg:my-16">
+        <div className="my-8 lg:my-14">
             <div className="text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-purple-900 mb-4">
                     Pricing Plans
@@ -47,20 +46,23 @@ const PricingSection = () => {
                 </div>
 
                 {/* Plan 3 */}
-                <div className="bg-gradient-to-br from-red-50 to-white border-2 border-gray-200 rounded-xl p-5 md:p-8 shadow-lg hover:shadow-2xl transition duration-300 transform hover:scale-105">
-                    <h3 className="text-2xl font-bold text-purple-700 mb-4">Premium</h3>
-                    <p className="text-gray-700 mb-6">For language enthusiasts</p>
-                    <p className="text-4xl font-bold text-purple-700 mb-6">
-                        $29.99<span className="text-lg text-gray-600">/month</span>
-                    </p>
-                    <ul className="text-gray-700 mb-6">
-                        <li className="mb-2">✅ Unlimited Lessons</li>
-                        <li className="mb-2">✅ Expert Tutors</li>
-                        <li className="mb-2">✅ 24/7 Support</li>
-                    </ul>
-                    <button className="w-full bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg transition duration-300 shadow-md">
-                        Get Started
-                    </button>
+
+
+                <div className="transition duration-300 transform hover:scale-105 bg-white bg-opacity-90 bg-gradient-to-br from-pink-200 to-orange-100 rounded-xl p-8 shadow-lg hover:shadow-xl overflow-hidden group">
+
+                    <div className="">
+                        <h3 className="text-2xl font-bold text-pink-700 mb-4">Premium</h3>
+                        <p className="text-gray-700 mb-6">For language enthusiasts</p>
+                        <p className="text-4xl font-bold text-pink-700 mb-6">$29.99<span className="text-lg text-gray-600">/month</span></p>
+                        <ul className="text-gray-700 mb-6">
+                            <li className="mb-2">✅ Unlimited Lessons</li>
+                            <li className="mb-2">✅ Expert Tutors</li>
+                            <li className="mb-2">✅ 24/7 Support</li>
+                        </ul>
+                        <button className="w-full bg-gradient-to-r from-pink-600 to-orange-600 hover:from-pink-700 hover:to-orange-700 text-white px-6 py-3 rounded-lg transition duration-300 shadow-md">
+                            Get Started
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

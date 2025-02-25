@@ -8,6 +8,7 @@ import Register from "../components/Register";
 import AuthLayout from "../layouts/AuthLayout";
 import TutorialPage from "../pages/TutorialPage";
 import Lessons from "../components/Lessons";
+import PrivateTutorialPage from "../pages/PrivateTutorialPage";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/tutorials",
-                element: <TutorialPage></TutorialPage>
+                element: <PrivateTutorialPage><TutorialPage></TutorialPage></PrivateTutorialPage>
             },
         ],
     },

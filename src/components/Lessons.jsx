@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import LessonCards from "./LessonCards";
 
 const Lessons = () => {
@@ -10,11 +10,11 @@ const Lessons = () => {
     (data) => data.lesson_no === parseInt(params.lesson_no)
   );
 
-  
-console.log(selectedLesson)
+
+  console.log(selectedLesson)
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto my-4">
       {/* Lesson Title and Description */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
@@ -26,10 +26,15 @@ console.log(selectedLesson)
       </div>
 
       {/* Words Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 pb-7">
         {
-            selectedLesson.map((word)=> <LessonCards word={word} key={word.id}></LessonCards>)
+          selectedLesson.map((word) => <LessonCards word={word} key={word.id}></LessonCards>)
         }
+      </div>
+      <div className="flex justify-center">
+        <Link to="/start-learning"><button className="my-3 bg-gradient-to-r from-pink-600 to-orange-600 hover:from-pink-700 hover:to-orange-700 text-white px-10 py-4 rounded-lg transition duration-300 shadow-md ">
+        Back to Lesson
+        </button></Link>
       </div>
     </div>
   );
