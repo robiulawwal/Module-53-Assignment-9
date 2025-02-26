@@ -4,7 +4,6 @@ import { AuthContext } from "../contextData/AuthProvider";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
-
   return (
     <div className="my-6">
       {/* <img src={user.photoURL} alt="" /> */}

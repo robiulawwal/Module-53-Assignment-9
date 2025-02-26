@@ -6,8 +6,6 @@ import { auth } from "../firebase/firebase.init";
 const ForgotPassword = () => {
     const [error, setError] = useState("");
     const location = useLocation();
-console.log(location)
-
 
     const handleResetPassword = (e) => {
         const email = e.target.email.value;
@@ -23,7 +21,7 @@ console.log(location)
                 window.location.href = "https://mail.google.com";
             })
             .catch((error) => {
-                setError(error.message?.split('(')[1].split(')')[0]);
+                setError(error.message.replace("Firebase: ", ""));
             });
     };
 
@@ -39,7 +37,7 @@ console.log(location)
                             name="email"
                             className="input"
                             placeholder="Email"
-                          defaultValue={location?.state && location.state}
+                            defaultValue={location?.state?.email || ""}
                             required
                         />
                         {error && <p className="text-red-600">{error}</p>}

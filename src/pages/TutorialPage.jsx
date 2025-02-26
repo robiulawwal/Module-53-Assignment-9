@@ -13,7 +13,7 @@ const TutorialPage = () => {
 
         {/* Responsive Grid for Videos */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
-{/*      
+     
           <div className="aspect-w-16 aspect-h-9">
             <iframe
               src="https://www.youtube.com/embed/sISIVKJh_EA?si=E0riVwbZwlls8VwL"
@@ -100,7 +100,7 @@ const TutorialPage = () => {
               allowFullScreen
               className="w-full h-50 rounded-lg shadow-lg"
             ></iframe>
-          </div> */}
+          </div>
 
         </div>
 

@@ -12,7 +12,7 @@ const PrivateLessons = ({ children }) => {
         </div>
     }
     if (!user) {
-        return <Navigate state={location} to="/auth/login"></Navigate>
+        return <Navigate state={location} to="/auth/login" ></Navigate>
     }
     return (
         <div>

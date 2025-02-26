@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../contextData/AuthProvider";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
 const navigate = useNavigate();
@@ -21,9 +22,8 @@ const navigate = useNavigate();
             navigate("/profile")
             // ...
           }).catch((error) => {
-            console.log(error.message)
+            toast.error(error.message.replace("Firebase: ", ""));
           });
-        console.log(name, photo)
     };
 
     if (loader) {

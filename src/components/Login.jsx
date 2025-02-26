@@ -1,10 +1,10 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contextData/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
-    const { setUser, loginWIthGoogle, loginUser, } = useContext(AuthContext);
+    const { loginWIthGoogle, loginUser, } = useContext(AuthContext);
     const [error, setLoginError] = useState("");
     const [email, setEmail] = useState("");
 
@@ -25,14 +25,12 @@ const Login = () => {
             return
         }
         loginUser(email, password)
-            .then((result) => {
+            .then(() => {
                 // Signed in 
                 navigate(location?.state ? location.state : "/")
-                console.log(result.user)
                 // ...
             })
             .catch((error) => {
-                console.log(error.message)
                 toast.error(error.message.replace("Firebase: ", ""));
                 setLoginError("invalid username or password")
             });
@@ -40,12 +38,10 @@ const Login = () => {
 
     const loginGoogle = () => {
         loginWIthGoogle()
-            .then((result) => {
-                console.log(result.user);
+            .then(() => {
                 navigate(location?.state ? location.state : "/")
             })
             .catch((error) => {
-                console.log(error.message);
                 toast.error(error.message.split('(')[1].split(')')[0])
             });
     }

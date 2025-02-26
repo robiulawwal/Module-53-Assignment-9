@@ -31,7 +31,7 @@ const Modal = ({ word }) => {
         <div className="mt-8">
           <h4 className="text-2xl font-bold text-purple-700 mb-3">Example</h4>
           <p className="text-gray-700 text-lg italic">
-            "{word.example}"
+            {`"${word.example}"`}
           </p>
         </div>
 

@@ -15,10 +15,8 @@ const StartLearningPage = () => {
     { "lesson_no": 10, id: 10 },
   ];
   const navigate = useNavigate();
-  // console.log(data);
 
   const handleLessons = (lesson_no) => {
-    console.log(lesson_no)
     navigate(`/lessons/${lesson_no}`)
   }
 

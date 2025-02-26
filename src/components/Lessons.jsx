@@ -17,9 +17,6 @@ const Lessons = () => {
         <h1 className="text-4xl md:text-5xl font-bold text-purple-800 mb-4">
           Lesson no : {parseInt(params.lesson_no)}
         </h1>
-        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-          {selectedLesson.description}
-        </p>
       </div>
 
       {/* Words Grid */}
