@@ -9,6 +9,11 @@ import AuthLayout from "../layouts/AuthLayout";
 import TutorialPage from "../pages/TutorialPage";
 import Lessons from "../components/Lessons";
 import PrivateTutorialPage from "../pages/PrivateTutorialPage";
+import PrivateLessons from "../components/PrivateLessons";
+import ProfilePage from "../pages/ProfilePage";
+import PrivateProfile from "../pages/PrivateProfile";
+import UpdateProfile from "../pages/UpdateProfile";
+import ForgotPassword from "../pages/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/lessons/:lesson_no",
-                element: <Lessons></Lessons>,
+                element: <PrivateLessons><Lessons></Lessons></PrivateLessons>,
                 loader: () => fetch("/languageData.json").then(res => res.json())
 
             },
@@ -33,6 +38,14 @@ const router = createBrowserRouter([
                 path: "/tutorials",
                 element: <PrivateTutorialPage><TutorialPage></TutorialPage></PrivateTutorialPage>
             },
+            {
+                path: "/profile",
+                element: <PrivateProfile><ProfilePage></ProfilePage></PrivateProfile>
+            },
+            {
+                path:"profile/update-profile",
+                element:<UpdateProfile></UpdateProfile>
+            }
         ],
     },
     {
@@ -46,6 +59,10 @@ const router = createBrowserRouter([
             {
                 path: "/auth/register",
                 element: <Register></Register>
+            },
+            {
+                path: "/auth/forgot-password",
+                element:<ForgotPassword></ForgotPassword>
             }
         ]
     },

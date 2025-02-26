@@ -10,9 +10,6 @@ const Lessons = () => {
     (data) => data.lesson_no === parseInt(params.lesson_no)
   );
 
-
-  console.log(selectedLesson)
-
   return (
     <div className="container mx-auto my-4">
       {/* Lesson Title and Description */}
@@ -28,7 +25,7 @@ const Lessons = () => {
       {/* Words Grid */}
       <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 pb-7">
         {
-          selectedLesson.map((word) => <LessonCards word={word} key={word.id}></LessonCards>)
+          selectedLesson.map((word ,idx) => <LessonCards word={word} key={idx}></LessonCards>)
         }
       </div>
       <div className="flex justify-center">

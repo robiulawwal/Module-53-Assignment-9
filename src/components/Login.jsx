@@ -1,17 +1,21 @@
 import { useContext, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../contextData/AuthProvider";
 import { toast } from "react-toastify";
 
 const Login = () => {
     const { setUser, loginWIthGoogle, loginUser, } = useContext(AuthContext);
     const [error, setLoginError] = useState("");
+    const [email, setEmail] = useState("");
+
+    const location = useLocation();
+    
     const navigate = useNavigate();
     const handleForm = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email, password);
+
         if (!email) {
             setLoginError("enter a valid email")
             return
@@ -23,20 +27,22 @@ const Login = () => {
         loginUser(email, password)
             .then((result) => {
                 // Signed in 
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
                 console.log(result.user)
                 // ...
             })
             .catch((error) => {
                 console.log(error.message)
-                toast.error(error.message.replace("Firebase: ", ""))
+                toast.error(error.message.replace("Firebase: ", ""));
+                setLoginError("invalid username or password")
             });
     }
+
     const loginGoogle = () => {
         loginWIthGoogle()
             .then((result) => {
                 console.log(result.user);
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
             })
             .catch((error) => {
                 console.log(error.message);
@@ -45,15 +51,15 @@ const Login = () => {
     }
     return (
         <div className="my-18">
-            <h1 className="text-3xl text-purple-600 font-bold text-center mb-6">Login now!</h1>
+            <h1 className="text-3xl text-purple-500 font-bold text-center mb-6">Login now!</h1>
             <div className="card mx-auto bg-base-100 w-full max-w-sm shrink-0 border-2 border-pink-200 shadow-pink-200 shadow-2xl">
                 <form onSubmit={handleForm}>
                     <div className="card-body">
                         <label className="fieldset-label">Email</label>
-                        <input type="email" name="email" className="input" placeholder="Email" />
+                        <input onChange={(e) => setEmail(e.target.value)} type="email" name="email" className="input" placeholder="Email" />
                         <label className="fieldset-label">Password</label>
                         <input type="password" name="password" className="input" placeholder="Password" />
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <div><Link state={email} to="/auth/forgot-password"><p className="hover:underline">Forgot password?</p></Link></div>
                         {
                             error && <p className="text-red-600">{error}</p>
                         }

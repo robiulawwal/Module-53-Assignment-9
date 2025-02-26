@@ -106,7 +106,7 @@ const TutorialPage = () => {
 
         <div className="flex justify-center">
           <Link to="/start-learning"><button className="mt-10 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-700 text-white px-10 py-3 rounded-lg transition duration-300 shadow-md ">
-            Lessons
+          Learn Vocabularies
           </button></Link>
         </div>
       </div>

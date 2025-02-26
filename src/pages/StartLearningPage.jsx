@@ -76,6 +76,9 @@ const StartLearningPage = () => {
           </div>
         ))}
       </div>
+      
+
+      {/* tutorials  */}
       <div className="mt-16">
         <h1 className="text-xl md:text-3xl font-semibold text-pink-800 text-center mb-8">
           Start watching tutorials now  click view <br /> more for more tutorial videos

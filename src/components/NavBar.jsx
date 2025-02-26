@@ -4,7 +4,7 @@ import { AuthContext } from "../contextData/AuthProvider";
 
 
 const NavBar = () => {
-const {user,logOutUser } = useContext(AuthContext);
+    const { user, logOutUser } = useContext(AuthContext);
     return (
 
         <div className="bg-base-100">
@@ -20,29 +20,69 @@ const {user,logOutUser } = useContext(AuthContext);
                             <li> <NavLink to="/">Home</NavLink>  </li>
                             <li> <NavLink to="/start-learning">Start-Learning</NavLink>  </li>
                             <li><NavLink to="/tutorials">Tutorials</NavLink></li>
-                            <li><NavLink to="signup">Signup</NavLink></li>
+                            {
+                                user && <li><NavLink to="/profile">my-profile</NavLink></li>
+                            }
                         </ul>
                     </div>
-                    <div className="text-xl md:text-4xl font-bold text-pink-600 hover:text-purple-600 transition duration-300 cursor-pointer">
-                        Lingo Bingo
+
+
+                    {/* Custom Logo */}
+                    <div className="flex items-center space-x-2">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 64 64"
+                            className="h-12 w-12 text-purple-600"
+                        >
+                            {/* Gradient Background */}
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style={{ stopColor: "#9333EA", stopOpacity: 1 }} />
+                                    <stop offset="100%" style={{ stopColor: "#DB2777", stopOpacity: 1 }} />
+                                </linearGradient>
+                            </defs>
+
+                            {/* Circle */}
+                            <circle cx="32" cy="32" r="30" fill="url(#logoGradient)" />
+
+                            {/* Letter "L" */}
+                            <path
+                                d="M20 20v24h8V20h-8z"
+                                fill="#FFFFFF"
+                            />
+                            {/* Letter "B" */}
+                            <path
+                                d="M36 20v24h8c4.418 0 8-3.582 8-8s-3.582-8-8-8h-8z"
+                                fill="#FFFFFF"
+                            />
+                        </svg>
+
+                        {/* Animated Gradient Text */}
+                        <div className="text-xl md:flex hidden md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-400 bg-clip-text text-transparent animate-gradient">
+                            Lingo Bingo
+                        </div>
                     </div>
+
+
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 space-x-3">
                         <li> <NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/">Home</NavLink>  </li>
                         <li> <NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/start-learning">Start-Learning</NavLink>  </li>
                         <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/tutorials">Tutorials</NavLink></li>
-                        <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="signup">Signup</NavLink></li>
+                        {
+                            user && <li><NavLink className="px-4 py-2 rounded-lg text-xl text-gray-700" to="/profile">my-profile</NavLink></li>
+                        }
                     </ul>
                 </div>
-                <div className="navbar-end">
-                {
-                    user?<button onClick={logOutUser} className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
-                    Logout
-                </button>:<Link to="/auth/login"><button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300">
-                    Login
-                </button></Link>
-                }
+                <div className="navbar-end text-xl">
+                    {
+                        user ? <button onClick={logOutUser} className="bg-gradient-to-t from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300 shadow-md">
+                            Logout
+                        </button> : <Link to="/auth/login"><button className="bg-gradient-to-b from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-6 py-2 rounded-lg transition duration-300">
+                            Login
+                        </button></Link>
+                    }
                 </div>
             </nav>
         </div>
