@@ -9,7 +9,7 @@ const ProfilePage = () => {
             <div className="max-w-4xl mx-auto p-6">
                 {/* Welcome Title with User Name */}
                 <h1 className="text-5xl font-extrabold text-white text-center mb-10 animate-pulse">
-                    Welcome, {user?.displayName ? user?.displayName : user?.email}! 👋
+                    Welcome to profile, {user?.displayName ? user?.displayName : user?.email}! 👋
                 </h1>
 
                 {/* Profile Information Card */}

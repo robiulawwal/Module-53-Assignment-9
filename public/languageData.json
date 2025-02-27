@@ -71,7 +71,7 @@
         "pronunciation": "fukuzatsu",
         "meaning": "complex / complicated",
         "part_of_speech": "adjective",
-        "difficulty": "hard",
+        "difficulty": "difficult",
         "lesson_no": 1,
         "when_to_say": "Used to describe something that is intricate or difficult to understand.",
         "example": "この問題はとても複雑です。 (kono mondai wa totemo fukuzatsu desu.) - This problem is very complex."
@@ -1032,17 +1032,6 @@
         "lesson_no": 4,
         "when_to_say": "Used when talking about continuing something.",
         "example": "勉強を続けます。 (benkyou wo tsuzukemasu.) - I continue studying."
-    },
-    {
-        "id": "word094",
-        "word": "止める",
-        "pronunciation": "tomeru",
-        "meaning": "to stop",
-        "part_of_speech": "verb",
-        "difficulty": "difficult",
-        "lesson_no": 5,
-        "when_to_say": "Used when talking about stopping something.",
-        "example": "音楽を止めます。 (ongaku wo tomemasu.) - I stop the music."
     },
     {
         "id": "word095",

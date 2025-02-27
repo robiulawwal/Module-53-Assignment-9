@@ -20,7 +20,7 @@ const Lessons = () => {
       </div>
 
       {/* Words Grid */}
-      <div className="overflow-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 pb-7">
+      <div className="overflow-hidden grid grid-cols-1 w-11/12 mx-auto md:w-full sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 pb-7">
         {
           selectedLesson.map((word ,idx) => <LessonCards word={word} key={idx}></LessonCards>)
         }
