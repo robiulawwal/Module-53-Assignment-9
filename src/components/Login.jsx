@@ -9,7 +9,6 @@ const Login = () => {
     const [email, setEmail] = useState("");
 
     const location = useLocation();
-    
     const navigate = useNavigate();
     const handleForm = (e) => {
         e.preventDefault();

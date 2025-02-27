@@ -6,7 +6,6 @@ import { auth } from "../firebase/firebase.init";
 const ForgotPassword = () => {
     const [error, setError] = useState("");
     const location = useLocation();
-
     const handleResetPassword = (e) => {
         const email = e.target.email.value;
         e.preventDefault();
@@ -37,7 +36,7 @@ const ForgotPassword = () => {
                             name="email"
                             className="input"
                             placeholder="Email"
-                            defaultValue={location?.state?.email || ""}
+                            defaultValue={location.state && location.state}
                             required
                         />
                         {error && <p className="text-red-600">{error}</p>}
