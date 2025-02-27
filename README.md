@@ -4,7 +4,7 @@
 This site is created to help users learn Japanese by providing a variety of lessons, tutorials, and resources. It includes features like user authentication, protected routes, and interactive learning tools.
 
 ## Live URL
-[Your Live Site URL Here](http://example.com)
+[Your Live Site URL Here](https://vocabulary-learning-japanese.web.app/)
 
 ## Key Features
 1. Secure login and registration using Firebase Authentication.

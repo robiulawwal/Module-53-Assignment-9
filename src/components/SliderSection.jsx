@@ -127,12 +127,13 @@ const SliderSection = () => {
                 className="rounded-2xl absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-opacity-40 flex items-center justify-center">
-                <div className="text-center space-y-4 rounded-lg bg-black/20 p-4">
+                <div className="text-center space-y-4 rounded-lg bg-black/30 p-4">
                   <h2 className="text-3xl md:text-5xl font-bold text-white ">
-                    Join Our Community
+                   Start Learning Today
                   </h2>
                   <p className="text-lg md:text-xl text-white max-w-2xl mx-auto ">
                     Connect with learners worldwide and achieve your language goals together.
+                    and start learning today
                   </p>
                 </div>
               </div>
